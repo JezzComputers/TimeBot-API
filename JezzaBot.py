@@ -26,6 +26,6 @@ def runBot():
     async def on_message(message):
         if message.author == client.user:
             return
-        await processMessage(message, 'hi')
+        await processMessage(message, 'hello')
 
     client.run(discord_token)
