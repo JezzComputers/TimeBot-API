@@ -3,7 +3,7 @@ import discord
 def handle_user_messages(msg) ->str:
     message = msg.lower() #Converts all inputs to lower case
     if(message == 'hi'):
-        return 'Hello Nigger'
+        return 'Hi there'
     if(message == 'hello'):
         return 'Hello user. Welcome'
 
