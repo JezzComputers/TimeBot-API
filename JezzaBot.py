@@ -1,11 +1,10 @@
 import discord
+from datetime import time
 
 def handle_user_messages(msg) ->str:
     message = msg.lower() #Converts all inputs to lower case
-    if(message == 'hi'):
-        return 'Hi there'
-    if(message == 'hello'):
-        return 'Hello user. Welcome'
+    if(message == 'what is the time'):
+        return time
 
 async def processMessage(message, user_message):
     try:
@@ -26,6 +25,6 @@ def runBot():
     async def on_message(message):
         if message.author == client.user:
             return
-        await processMessage(message, 'hello')
+        await processMessage(message, 'what is the time')
 
     client.run(discord_token)
