@@ -1,9 +1,12 @@
 import discord
-from datetime import time
+from datetime import datetime
 
 def handle_user_messages(msg) ->str:
     message = msg.lower() #Converts all inputs to lower case
     if(message == 'what is the time'):
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        time = "Current Time =", current_time
         return time
 
 async def processMessage(message, user_message):
