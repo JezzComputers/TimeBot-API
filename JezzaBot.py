@@ -27,7 +27,7 @@ def runBot():
 
     @client.event
     async def on_ready():
-        print({client.user}, 'is live')
+        print({client.user}, 'is running')
 
     @client.event
     async def on_message(message):
