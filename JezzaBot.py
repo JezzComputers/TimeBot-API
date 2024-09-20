@@ -6,7 +6,7 @@ def handle_user_messages(msg) ->str:
     if(message == 'what is the time'):
         now = datetime.now()
         current_time = now.strftime("%H:%M:%S")
-        time = "Current Time =", current_time
+        time = (f"Current Time = {current_time}")
         return time
 
 async def processMessage(message, user_message):
