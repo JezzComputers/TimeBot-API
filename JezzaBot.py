@@ -1,5 +1,11 @@
+import os
 import discord
+from typing import Final
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
+TOKEN: Final[str] = os.getenv('DISCORD_TOKEN')
 
 def handle_user_messages(msg) ->str:
     message = msg.lower() #Converts all inputs to lower case
@@ -17,7 +23,6 @@ async def processMessage(message, user_message):
         print(error)
 
 def runBot():
-    discord_token = 'MTI4NTg4MDY1OTMzMTY0OTU0Nw.GdiDI1.QsyFyudC8Gw_uyeuWymJWGTa77ghsy343z5SJs'
     client = discord.Client(intents=discord.Intents.default())
 
     @client.event
@@ -30,4 +35,4 @@ def runBot():
             return
         await processMessage(message, 'what is the time')
 
-    client.run(discord_token)
+    client.run(TOKEN)
