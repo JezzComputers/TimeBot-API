@@ -5,8 +5,8 @@ def handle_user_messages(msg) ->str:
     message = msg.lower() #Converts all inputs to lower case
     if(message == 'what is the time'):
         now = datetime.now()
-        current_time = now.strftime("%H:%M:%S")
-        time = (f"Current Time = {current_time}")
+        current_time = now.strftime("%I:%M:%S %p")
+        time = (f"Current Time: {current_time}")
         return time
 
 async def processMessage(message, user_message):
