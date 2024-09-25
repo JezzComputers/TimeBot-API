@@ -1,5 +1,3 @@
-#Test Push
-
 import os
 import discord
 from typing import Final
