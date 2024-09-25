@@ -18,6 +18,7 @@ def handle_user_messages(msg) ->str:
 async def processMessage(message, user_message):
     try:
         botfeedback = handle_user_messages(user_message)
+        print(botfeedback)
         await message.channel.send(botfeedback)
     except Exception as error:
         print(error)
@@ -33,11 +34,6 @@ def runBot():
     async def on_message(message):
         if message.author == client.user:
             return
-        await processMessage(message, 'what is the time')
-
-    @client.event
-    async def on_message(message):
-        if message.author == client.user:
-            print(f"Bot sent: {message.content}")
+        await processMessage(message, 'what is the time')  
 
     client.run(TOKEN)
