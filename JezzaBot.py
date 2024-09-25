@@ -35,4 +35,11 @@ def runBot():
             return
         await processMessage(message, 'what is the time')
 
+    @client.event
+    async def on_message(message):
+        if message.author == client.user:
+            return
+
+        print(f"{message.author} sent: {message.content}")
+
     client.run(TOKEN)
